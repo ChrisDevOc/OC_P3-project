@@ -11,13 +11,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Rancho&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&family=Shrikhand&display=swap"
       rel="stylesheet"
     />
     <script
@@ -40,18 +34,18 @@
         />
       </figure>
     </header>
+    <form action="submit" class="locationSelector">
+      <i class="fas fa-location-dot"></i>
+      <input class="citySelector" type="text" placeholder="Paris, Belleville" />
+    </form>
+    <section class="banner">
+      <h1>Réserver le menu qui vous convient</h1>
+      <h2>
+        Découvrez des restaurants d'exception, sélectionnés par nos soins.
+      </h2>
+      <button class="linearGradientBtn">Explorer nos restaurants</button>
+    </section>
     <main>
-      <form action="submit" class="locationSelector">
-        <i class="fas fa-location-dot"></i>
-        <input type="text" placeholder="Paris, Belleville" />
-      </form>
-      <section class="description">
-        <h1>Réserver le menu qui vous convient</h1>
-        <h2>
-          Découvrez des restaurants d'exception, sélectionnés par nos soins
-        </h2>
-        <button class="lookRestaurant">Explorer nos restaurants</button>
-      </section>
       <section class="explaination">
         <h1>Fonctionnement</h1>
         <div class="explainationSteps">
@@ -71,35 +65,66 @@
         </div>
       </section>
       <section class="restaurantList">
+        <h1>Restaurants</h1>
         <div class="restaurantItem">
           <figure>
-            <img src="/images/..." alt="" />
+            <img src="/images/restaurants/restaurant1.jpg" alt="" />
           </figure>
-          <div class="logoNew"></div>
-          <h4>La palette du goût</h4>
-          <h5>Ménilmontant</h5>
-          <i class="fas fa-heart"></i>
+          <div class="logoNew">Nouveau</div>
+          <div class="descriptionWrapper">
+            <div class="descriptionSeparator">
+              <h4>La palette du goût</h4>
+              <h5>Ménilmontant</h5>
+            </div>
+            <i class="fa-regular fa-heart"></i>
+          </div>
         </div>
         <div class="restaurantItem">
           <figure>
-            <img src="/images/..." alt="" />
+            <img src="/images/restaurants/restaurant2.jpg" alt="" />
           </figure>
-          <div class="logoNew"></div>
-          <h4>La palette du goût</h4>
-          <h5>Ménilmontant</h5>
-          <i class="fas fa-heart"></i>
+          <div class="logoNew">Nouveau</div>
+          <div class="descriptionWrapper">
+            <div class="descriptionSeparator">
+              <h4>La note enchantée</h4>
+              <h5>Charonne</h5>
+            </div>
+            <i class="fa-regular fa-heart"></i>
+          </div>
+        </div>
+        <div class="restaurantItem">
+          <figure>
+            <img src="/images/restaurants/restaurant3.jpg" alt="" />
+          </figure>
+
+          <div class="descriptionWrapper">
+            <div class="descriptionSeparator">
+              <h4>À la française</h4>
+              <h5>Cité Rouge</h5>
+            </div>
+            <i class="fa-regular fa-heart"></i>
+          </div>
+        </div>
+        <div class="restaurantItem">
+          <figure>
+            <img src="/images/restaurants/restaurant4.jpg" alt="" />
+          </figure>
+
+          <div class="descriptionWrapper">
+            <div class="descriptionSeparator">
+              <h4>Le délice des sens</h4>
+              <h5>Folie-Méricourt</h5>
+            </div>
+            <i class="fa-regular fa-heart"></i>
+          </div>
         </div>
       </section>
       <footer>
-        <figure>
-          <img src="/images/ohmyfoodLogo.png" alt="" />
-        </figure>
-        <ul class="listFooter">
-          <li><i class="fas fa-utensils"></i>Poposer un restaurant</li>
-          <li><i class="fas fa-handshake-angle"></i>Devenir partenaire</li>
-          <li>Mentions légales</li>
-          <li>Contact</li>
-        </ul>
+        <p>ohmyfood</p>
+        <a href=""><i class="fas fa-utensils"></i>Poposer un restaurant</a>
+        <a href=""><i class="fas fa-handshake-angle"></i>Devenir partenaire</a>
+        <a href="">Mentions légales</a>
+        <a href="">Contact</a>
       </footer>
     </main>
   </body>

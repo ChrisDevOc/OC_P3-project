@@ -1,0 +1,61 @@
+.restaurantList {
+  background-color: $colour-indexBackground;
+  padding: 30px 20px;
+  height: min-content;
+}
+.restaurantItem {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: min-content;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0px 2px 10px lightgrey;
+  margin: 10px 0;
+  position: relative;
+  figure {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 150px;
+  }
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px 10px 0 0;
+  }
+
+  h4,
+  h5 {
+    padding: 0;
+    margin: 0;
+  }
+  h5 {
+    font-weight: 400;
+  }
+  i {
+    font-size: 1.5em;
+    color: grey;
+  }
+  .logoNew {
+    width: 70px;
+    height: 25px;
+    background-color: $colour-tertiary;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    border-radius: 3px;
+    color: green;
+    font-size: 0.8em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+.descriptionWrapper {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 10px;
+  align-items: center;
+}

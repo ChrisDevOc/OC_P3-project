@@ -1,0 +1,22 @@
+.banner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  background-color: $colour-indexBackground;
+  padding: 40px 0;
+  h1 {
+    margin: 0;
+    font-weight: 900;
+    padding: 0 40px 0 40px;
+    font-size: 1.5em;
+  }
+  h2 {
+    margin: 0;
+    padding-top: 15px;
+    color: rgb(56, 55, 55);
+    font-weight: 100;
+    font-size: 1em;
+  }
+}

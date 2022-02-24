@@ -1,0 +1,23 @@
+footer {
+  background-color: rgb(59, 58, 58);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  padding: 0 0 50px 20px;
+  p {
+    font-family: "Shrikhand", cursive;
+  }
+  a {
+    text-decoration: none;
+    color: unset;
+    margin: 5px 0;
+  }
+  i {
+    padding-right: 8px;
+  }
+  :nth-child(2) {
+    i {
+      padding-right: 13px;
+    }
+  }
+}

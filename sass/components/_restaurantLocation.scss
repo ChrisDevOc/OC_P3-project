@@ -1,0 +1,19 @@
+.locationSelector {
+  background-color: rgba(211, 206, 206, 0.589);
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.citySelector {
+  background-color: unset;
+  color: black;
+  padding-left: 15px;
+  border: none;
+  font-size: 1em;
+  font-weight: bold;
+  flex: none;
+  width: 140px;
+  box-sizing: border-box;
+}

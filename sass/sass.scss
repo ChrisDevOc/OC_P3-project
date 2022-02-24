@@ -1,14 +1,17 @@
 @import "./utils/variables";
 @import "./layout/header";
+@import "./layout/button";
+@import "./layout/footer";
+@import "./components/restaurantLocation";
+@import "./components/banner";
+@import "./components/explaination";
+@import "./components/restaurantList";
 
 body {
-  // font-family: "Roboto", sans-serif;
-  color: $colour-primary;
-  font-size: 1rem;
-  font-weight: 100;
-  line-height: 1.7;
   margin: 0;
+  font-family: "Roboto", sans-serif;
+  line-height: normal;
 }
 figure {
-  margin: auto auto;
+  margin: auto;
 }
