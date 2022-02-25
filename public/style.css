@@ -1,3 +1,21 @@
+body {
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+  line-height: normal;
+}
+
+figure {
+  margin: auto;
+}
+
+main {
+  max-width: 1200px;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+}
+
 header {
   display: flex;
   height: 60px;
@@ -26,6 +44,11 @@ footer {
   display: flex;
   flex-direction: column;
   padding: 0 0 50px 20px;
+}
+@media screen and (min-width: 700px) {
+  footer {
+    text-align: center;
+  }
 }
 footer p {
   font-family: "Shrikhand", cursive;
@@ -85,6 +108,22 @@ footer :nth-child(2) i {
   font-size: 1em;
 }
 
+.explaination {
+  margin: 50px 0;
+  padding: 0 20px;
+}
+.explaination h1 {
+  margin: 0;
+  width: 100%;
+}
+@media screen and (min-width: 1000px) {
+  .explaination {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+
 .explainationSteps {
   display: flex;
   height: 60px;
@@ -108,13 +147,17 @@ footer :nth-child(2) i {
   font-size: 0.9em;
   font-weight: 500;
 }
-
-.explaination {
-  margin: 50px 0;
-  padding: 0 20px;
+@media screen and (min-width: 700px) {
+  .explainationSteps {
+    width: 500px;
+    margin: 25px auto;
+  }
 }
-.explaination h1 {
-  margin: 0;
+@media screen and (min-width: 1000px) {
+  .explainationSteps {
+    width: 30%;
+    margin: 25px auto;
+  }
 }
 
 .stepOrder {
@@ -132,8 +175,26 @@ footer :nth-child(2) i {
 
 .restaurantList {
   background-color: #eee8e8;
-  padding: 30px 20px;
+  padding: 50px 20px;
   height: min-content;
+  display: flex;
+  flex-direction: column;
+}
+.restaurantList h1 {
+  width: 100%;
+  margin-top: 0;
+}
+@media screen and (min-width: 700px) {
+  .restaurantList {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .restaurantList {
+    border-radius: 10px 10px 0 0;
+  }
 }
 
 .restaurantItem {
@@ -144,7 +205,7 @@ footer :nth-child(2) i {
   background-color: white;
   border-radius: 10px;
   box-shadow: 0px 2px 10px lightgrey;
-  margin: 10px 0;
+  margin: 15px 0;
   position: relative;
 }
 .restaurantItem figure {
@@ -185,22 +246,17 @@ footer :nth-child(2) i {
   justify-content: center;
   align-items: center;
 }
+@media screen and (min-width: 700px) {
+  .restaurantItem {
+    width: 45%;
+  }
+}
 
 .descriptionWrapper {
   display: flex;
   justify-content: space-between;
   padding: 10px 10px;
   align-items: center;
-}
-
-body {
-  margin: 0;
-  font-family: "Roboto", sans-serif;
-  line-height: normal;
-}
-
-figure {
-  margin: auto;
 }
 
 /*# sourceMappingURL=style.css.map */

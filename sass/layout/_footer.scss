@@ -4,6 +4,9 @@ footer {
   display: flex;
   flex-direction: column;
   padding: 0 0 50px 20px;
+  @media screen and (min-width: 700px) {
+    text-align: center;
+  }
   p {
     font-family: "Shrikhand", cursive;
   }
