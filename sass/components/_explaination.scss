@@ -17,7 +17,7 @@
   border-radius: 10px;
   margin: 25px 0;
   align-items: center;
-  box-shadow: 0px 2px 10px lightgrey;
+  @include box-shadow;
   background-color: $colour-indexBackground;
   &:hover {
     background-color: rgb(235, 212, 245);

@@ -20,6 +20,7 @@ header {
   display: flex;
   height: 60px;
   box-shadow: 0px 2px 5px 1px grey;
+  background-color: white;
 }
 
 .logo {
@@ -30,7 +31,6 @@ header {
 .linearGradientBtn {
   width: 200px;
   height: 45px;
-  margin-top: 30px;
   border-radius: 25px;
   border: none;
   background: linear-gradient(177deg, #ff79da, #9356dc);
@@ -63,6 +63,110 @@ footer i {
 }
 footer :nth-child(2) i {
   padding-right: 13px;
+}
+
+.restaurantMenu {
+  background-color: #eee8e8;
+  border-radius: 40px 40px 0 0;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.restaurantMenu .titleWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  width: 100%;
+}
+.restaurantMenu .titleWrapper h1 {
+  font-family: "Shrikhand", cursive;
+  font-size: 1.7em;
+  font-weight: 400;
+  margin: 0;
+}
+.restaurantMenu .titleWrapper i {
+  font-size: 1.6em;
+  padding-right: 10px;
+}
+.restaurantMenu h2 {
+  font-size: 1em;
+  font-weight: 100;
+  margin: 0;
+}
+.restaurantMenu .titleSeparation {
+  width: 40px;
+  height: 3px;
+  background-color: #99e2d0;
+  margin-top: 5px;
+}
+.restaurantMenu section {
+  margin: 20px 0;
+  width: 100%;
+}
+.restaurantMenu .linearGradientBtn {
+  margin: 20px 0;
+}
+
+.menuItem {
+  width: 100%;
+  height: 57px;
+  box-sizing: border-box;
+  background-color: white;
+  display: flex;
+  align-items: flex-end;
+  box-shadow: 0px 2px 10px lightgrey;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+.menuItem .itemName {
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  padding: 10px 0 10px 10px;
+  flex: 1 1 auto;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+.menuItem h3,
+.menuItem p {
+  margin: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding-right: 10px;
+  font-size: 1.1em;
+}
+.menuItem p {
+  font-size: 0.9em;
+}
+.menuItem .itemPrice {
+  padding-bottom: 10px;
+  flex: 0 0 auto;
+  font-weight: 900;
+}
+.menuItem .validationAnimation {
+  width: 0px;
+  height: 100%;
+  background-color: #99e2d0;
+  border-radius: 0 10px 10px 0;
+  display: flex;
+  overflow: hidden;
+  flex: 0 0 auto;
+}
+.menuItem .validationAnimation i {
+  color: white;
+  font-size: 1.8em;
+  margin: auto;
+  transform: rotate(360deg);
+}
+.menuItem:hover .validationAnimation {
+  transition: width 300ms ease-in;
+  width: 60px;
+}
+.menuItem:hover .validationAnimation i {
+  transform: rotate(0deg);
+  transition: transform 300ms ease-in-out;
 }
 
 .locationSelector {
@@ -257,6 +361,15 @@ footer :nth-child(2) i {
   justify-content: space-between;
   padding: 10px 10px;
   align-items: center;
+}
+
+.restaurantBanner {
+  object-fit: cover;
+  width: 100%;
+  height: 175px;
+}
+.restaurantBanner img {
+  width: 100%;
 }
 
 /*# sourceMappingURL=style.css.map */

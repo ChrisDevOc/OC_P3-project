@@ -24,7 +24,7 @@
   height: min-content;
   background-color: white;
   border-radius: 10px;
-  box-shadow: 0px 2px 10px lightgrey;
+  @include box-shadow;
   margin: 15px 0;
   position: relative;
   figure {

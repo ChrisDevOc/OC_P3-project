@@ -3,3 +3,6 @@ $colour-secondary: #ff79da;
 $colour-tertiary: #99e2d0;
 $colour-indexBackground: rgb(238, 232, 232); //colour for index banner +
 //explaination steps
+@mixin box-shadow {
+  box-shadow: 0px 2px 10px lightgrey;
+}
