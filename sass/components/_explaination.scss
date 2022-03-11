@@ -5,7 +5,7 @@
     margin: 0;
     width: 100%;
   }
-  @media screen and (min-width: 1000px) {
+  @media screen and (min-width: $breakpoint-desktop) {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -19,12 +19,28 @@
   align-items: center;
   @include box-shadow;
   background-color: $colour-indexBackground;
+  position: relative;
+  z-index: 1;
+
   &:hover {
-    background-color: rgb(235, 212, 245);
+    &::after {
+      opacity: 1;
+      transition: opacity 300ms;
+    }
     i {
       color: $colour-primary;
     }
   }
+  &::after {
+    content: "";
+    @include pseudo-elem;
+    border-radius: 10px;
+    background-color: rgb(235, 212, 245);
+    opacity: 0;
+    z-index: -1;
+    @include box-shadow-hover;
+  }
+
   i {
     padding: 0 20px;
     color: grey;
@@ -33,11 +49,11 @@
     font-size: 0.9em;
     font-weight: 500;
   }
-  @media screen and (min-width: 700px) {
+  @media screen and (min-width: $breakpoint-tab) {
     width: 500px;
     margin: 25px auto;
   }
-  @media screen and (min-width: 1000px) {
+  @media screen and (min-width: $breakpoint-desktop) {
     width: 30%;
     margin: 25px auto;
   }

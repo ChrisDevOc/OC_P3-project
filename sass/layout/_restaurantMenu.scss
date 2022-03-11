@@ -2,14 +2,16 @@
   background-color: $colour-indexBackground;
   border-radius: 40px 40px 0 0;
   padding: 20px;
+  margin-top: -40px;
   display: flex;
   flex-direction: column;
   align-items: center;
+
   .titleWrapper {
     display: flex;
     justify-content: space-between;
     align-items: baseline;
-    width: 100%;
+    min-width: 100%;
     h1 {
       font-family: "Shrikhand", cursive;
       font-size: 1.7em;
@@ -35,9 +37,17 @@
   section {
     margin: 20px 0;
     width: 100%;
+    @media screen and (min-width: $breakpoint-desktop) {
+      width: 30%;
+    }
   }
   .linearGradientBtn {
     margin: 20px 0;
+  }
+  @media screen and (min-width: $breakpoint-desktop) {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
   }
 }
 .menuItem {
@@ -88,14 +98,14 @@
     flex: 0 0 auto;
     i {
       color: white;
-      font-size: 1.8em;
+      font-size: 1.3em;
       margin: auto;
       transform: rotate(360deg);
     }
   }
   &:hover .validationAnimation {
     transition: width 300ms ease-in;
-    width: 60px;
+    width: 50px;
     i {
       transform: rotate(0deg);
       transition: transform 300ms ease-in-out;

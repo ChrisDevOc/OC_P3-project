@@ -8,12 +8,12 @@
     width: 100%;
     margin-top: 0;
   }
-  @media screen and (min-width: 700px) {
+  @media screen and (min-width: $breakpoint-tab) {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
   }
-  @media screen and (min-width: 1200px) {
+  @media screen and (min-width: $breakpoint-desktop) {
     border-radius: 10px 10px 0 0;
   }
 }
@@ -27,6 +27,17 @@
   @include box-shadow;
   margin: 15px 0;
   position: relative;
+  &:hover {
+    @include box-shadow-hover;
+
+    img {
+      opacity: 0.8;
+    }
+  }
+  a {
+    text-decoration: none;
+    color: unset;
+  }
   figure {
     margin: 0;
     padding: 0;
@@ -48,10 +59,7 @@
   h5 {
     font-weight: 400;
   }
-  i {
-    font-size: 1.5em;
-    color: grey;
-  }
+
   .logoNew {
     width: 70px;
     height: 25px;
@@ -66,7 +74,7 @@
     justify-content: center;
     align-items: center;
   }
-  @media screen and (min-width: 700px) {
+  @media screen and (min-width: $breakpoint-tab) {
     width: 45%;
   }
 }
@@ -75,4 +83,31 @@
   justify-content: space-between;
   padding: 10px 10px;
   align-items: center;
+}
+
+.iconHeart {
+  font-size: 1.5em;
+  color: grey;
+  position: relative;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  &::before {
+    font: var(--fa-font-regular);
+    content: "\f004";
+  }
+  &:hover {
+    &::after {
+      transform: scale(1);
+      transition: transform 400ms ease-in;
+    }
+  }
+  &::after {
+    font: var(--fa-font-solid);
+    content: "\f004";
+    @include pseudo-elem;
+    top: 2px;
+    color: $colour-secondary;
+    z-index: 1;
+    transform: scale(0);
+  }
 }

@@ -5,7 +5,7 @@ body {
 }
 
 figure {
-  margin: auto;
+  margin: 0 auto;
 }
 
 main {
@@ -17,15 +17,34 @@ main {
 }
 
 header {
+  height: 70px;
   display: flex;
-  height: 60px;
   box-shadow: 0px 2px 5px 1px grey;
   background-color: white;
 }
+header .headerWrapper {
+  display: flex;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1200px;
+  position: relative;
+}
+header a {
+  position: absolute;
+  font-size: 26px;
+  top: 30px;
+  left: 25px;
+  color: black;
+}
+header figure {
+  margin: 0 auto;
+  width: 50%;
+  max-width: 150px;
+}
 
 .logo {
-  margin-top: 25px;
-  width: 150px;
+  margin-top: 30px;
+  width: 100%;
 }
 
 .linearGradientBtn {
@@ -37,6 +56,10 @@ header {
   color: white;
   font-weight: 600;
 }
+.linearGradientBtn:hover {
+  box-shadow: 0px 2px 10px 2px grey;
+  opacity: 0.8;
+}
 
 footer {
   background-color: #3b3a3a;
@@ -45,7 +68,7 @@ footer {
   flex-direction: column;
   padding: 0 0 50px 20px;
 }
-@media screen and (min-width: 700px) {
+@media screen and (min-width: 600px) {
   footer {
     text-align: center;
   }
@@ -69,6 +92,7 @@ footer :nth-child(2) i {
   background-color: #eee8e8;
   border-radius: 40px 40px 0 0;
   padding: 20px;
+  margin-top: -40px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -77,7 +101,7 @@ footer :nth-child(2) i {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
-  width: 100%;
+  min-width: 100%;
 }
 .restaurantMenu .titleWrapper h1 {
   font-family: "Shrikhand", cursive;
@@ -104,8 +128,20 @@ footer :nth-child(2) i {
   margin: 20px 0;
   width: 100%;
 }
+@media screen and (min-width: 1000px) {
+  .restaurantMenu section {
+    width: 30%;
+  }
+}
 .restaurantMenu .linearGradientBtn {
   margin: 20px 0;
+}
+@media screen and (min-width: 1000px) {
+  .restaurantMenu {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
 }
 
 .menuItem {
@@ -156,13 +192,13 @@ footer :nth-child(2) i {
 }
 .menuItem .validationAnimation i {
   color: white;
-  font-size: 1.8em;
+  font-size: 1.3em;
   margin: auto;
   transform: rotate(360deg);
 }
 .menuItem:hover .validationAnimation {
   transition: width 300ms ease-in;
-  width: 60px;
+  width: 50px;
 }
 .menuItem:hover .validationAnimation i {
   transform: rotate(0deg);
@@ -236,12 +272,28 @@ footer :nth-child(2) i {
   align-items: center;
   box-shadow: 0px 2px 10px lightgrey;
   background-color: #eee8e8;
+  position: relative;
+  z-index: 1;
 }
-.explainationSteps:hover {
-  background-color: #ebd4f5;
+.explainationSteps:hover::after {
+  opacity: 1;
+  transition: opacity 300ms;
 }
 .explainationSteps:hover i {
   color: #9356dc;
+}
+.explainationSteps::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-radius: 10px;
+  background-color: #ebd4f5;
+  opacity: 0;
+  z-index: -1;
+  box-shadow: 0px 2px 10px 2px grey;
 }
 .explainationSteps i {
   padding: 0 20px;
@@ -251,7 +303,7 @@ footer :nth-child(2) i {
   font-size: 0.9em;
   font-weight: 500;
 }
-@media screen and (min-width: 700px) {
+@media screen and (min-width: 600px) {
   .explainationSteps {
     width: 500px;
     margin: 25px auto;
@@ -288,14 +340,14 @@ footer :nth-child(2) i {
   width: 100%;
   margin-top: 0;
 }
-@media screen and (min-width: 700px) {
+@media screen and (min-width: 600px) {
   .restaurantList {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
   }
 }
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1000px) {
   .restaurantList {
     border-radius: 10px 10px 0 0;
   }
@@ -311,6 +363,16 @@ footer :nth-child(2) i {
   box-shadow: 0px 2px 10px lightgrey;
   margin: 15px 0;
   position: relative;
+}
+.restaurantItem:hover {
+  box-shadow: 0px 2px 10px 2px grey;
+}
+.restaurantItem:hover img {
+  opacity: 0.8;
+}
+.restaurantItem a {
+  text-decoration: none;
+  color: unset;
 }
 .restaurantItem figure {
   margin: 0;
@@ -332,10 +394,6 @@ footer :nth-child(2) i {
 .restaurantItem h5 {
   font-weight: 400;
 }
-.restaurantItem i {
-  font-size: 1.5em;
-  color: grey;
-}
 .restaurantItem .logoNew {
   width: 70px;
   height: 25px;
@@ -350,7 +408,7 @@ footer :nth-child(2) i {
   justify-content: center;
   align-items: center;
 }
-@media screen and (min-width: 700px) {
+@media screen and (min-width: 600px) {
   .restaurantItem {
     width: 45%;
   }
@@ -363,13 +421,53 @@ footer :nth-child(2) i {
   align-items: center;
 }
 
+.iconHeart {
+  font-size: 1.5em;
+  color: grey;
+  position: relative;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+}
+.iconHeart::before {
+  font: var(--fa-font-regular);
+  content: "\f004";
+}
+.iconHeart:hover::after {
+  transform: scale(1);
+  transition: transform 400ms ease-in;
+}
+.iconHeart::after {
+  font: var(--fa-font-solid);
+  content: "\f004";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  top: 2px;
+  color: #ff79da;
+  z-index: 1;
+  transform: scale(0);
+}
+
 .restaurantBanner {
-  object-fit: cover;
   width: 100%;
   height: 175px;
 }
+@media screen and (min-width: 600px) {
+  .restaurantBanner {
+    height: 350px;
+  }
+}
+@media screen and (min-width: 1000px) {
+  .restaurantBanner {
+    height: 500px;
+  }
+}
 .restaurantBanner img {
+  object-fit: cover;
   width: 100%;
+  height: 100%;
 }
 
 /*# sourceMappingURL=style.css.map */
