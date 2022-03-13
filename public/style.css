@@ -55,10 +55,41 @@ header figure {
   background: linear-gradient(177deg, #ff79da, #9356dc);
   color: white;
   font-weight: 600;
+  cursor: pointer;
 }
 .linearGradientBtn:hover {
   box-shadow: 0px 2px 10px 2px grey;
   opacity: 0.8;
+}
+
+.iconHeart {
+  font-size: 1.5em;
+  color: grey;
+  position: relative;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+}
+.iconHeart::before {
+  font: var(--fa-font-regular);
+  content: "\f004";
+}
+.iconHeart:hover::after {
+  transform: scale(1);
+  transform-origin: center;
+  transition: transform 400ms ease-in;
+}
+.iconHeart::after {
+  font: var(--fa-font-solid);
+  content: "\f004";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  top: 2px;
+  color: #ff79da;
+  z-index: 1;
+  transform: scale(0);
 }
 
 footer {
@@ -111,7 +142,8 @@ footer :nth-child(2) i {
 }
 .restaurantMenu .titleWrapper i {
   font-size: 1.6em;
-  padding-right: 10px;
+  margin-right: 10px;
+  color: black;
 }
 .restaurantMenu h2 {
   font-size: 1em;
@@ -124,12 +156,12 @@ footer :nth-child(2) i {
   background-color: #99e2d0;
   margin-top: 5px;
 }
-.restaurantMenu section {
+.restaurantMenu .restaurantMenu_category {
   margin: 20px 0;
   width: 100%;
 }
 @media screen and (min-width: 1000px) {
-  .restaurantMenu section {
+  .restaurantMenu .restaurantMenu_category {
     width: 30%;
   }
 }
@@ -154,6 +186,7 @@ footer :nth-child(2) i {
   box-shadow: 0px 2px 10px lightgrey;
   border-radius: 10px;
   margin-top: 20px;
+  cursor: pointer;
 }
 .menuItem .itemName {
   display: flex;
@@ -205,6 +238,134 @@ footer :nth-child(2) i {
   transition: transform 300ms ease-in-out;
 }
 
+@keyframes fadein {
+  from {
+    transform-origin: top;
+    transform: scaleX(0);
+    opacity: 0;
+  }
+  to {
+    transform: scaleX(1);
+    opacity: 1;
+  }
+}
+.restaurantMenu_category {
+  animation: fadein 2000ms both;
+}
+.restaurantMenu_category--1 {
+  animation-delay: 666.6666666667ms;
+}
+.restaurantMenu_category--2 {
+  animation-delay: 1333.3333333333ms;
+}
+.restaurantMenu_category--3 {
+  animation-delay: 2000ms;
+}
+
+.loaderWrapper {
+  position: absolute;
+  background-color: white;
+  padding-top: 30vh;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  animation: loader 3s cubic-bezier(0.73, 0.02, 0.81, 0.02) forwards;
+  z-index: 3;
+}
+.loaderWrapper p {
+  position: absolute;
+  top: 15vh;
+  color: grey;
+  font-family: "Shrikhand", cursive;
+  font-size: 3vh;
+}
+
+@keyframes loader {
+  0%, 95% {
+    opacity: 1;
+    z-index: 3;
+  }
+  100% {
+    opacity: 0;
+    z-index: -1;
+  }
+}
+.boule1 {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-top: 200px;
+  background-color: #9356dc;
+  position: relative;
+  animation: bouleVerte 1000ms cubic-bezier(0.26, 1.07, 0.64, 0.96) 0s 10 alternate;
+  transform-origin: center -200px;
+}
+.boule1::before {
+  position: absolute;
+  content: "";
+  top: -202px;
+  left: 23.5px;
+  width: 3px;
+  height: 202px;
+  background-color: grey;
+}
+
+.boule2 {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-top: 200px;
+  background-color: #ff79da;
+  position: relative;
+}
+.boule2::before {
+  position: absolute;
+  content: "";
+  top: -202px;
+  left: 23.5px;
+  width: 3px;
+  height: 202px;
+  background-color: grey;
+}
+
+.boule3 {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-top: 200px;
+  background-color: #99e2d0;
+  position: relative;
+  animation: bouleBleue 1000ms cubic-bezier(0.26, 1.07, 0.64, 0.96) 0s 10 alternate;
+  transform-origin: center -200px;
+  animation-delay: 1000ms;
+}
+.boule3::before {
+  position: absolute;
+  content: "";
+  top: -202px;
+  left: 23.5px;
+  width: 3px;
+  height: 202px;
+  background-color: grey;
+}
+
+@keyframes bouleVerte {
+  0%, 50% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(20deg);
+  }
+}
+@keyframes bouleBleue {
+  0%, 50% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-20deg);
+  }
+}
 .locationSelector {
   background-color: rgba(211, 206, 206, 0.589);
   height: 50px;
@@ -419,35 +580,6 @@ footer :nth-child(2) i {
   justify-content: space-between;
   padding: 10px 10px;
   align-items: center;
-}
-
-.iconHeart {
-  font-size: 1.5em;
-  color: grey;
-  position: relative;
-  text-rendering: auto;
-  -webkit-font-smoothing: antialiased;
-}
-.iconHeart::before {
-  font: var(--fa-font-regular);
-  content: "\f004";
-}
-.iconHeart:hover::after {
-  transform: scale(1);
-  transition: transform 400ms ease-in;
-}
-.iconHeart::after {
-  font: var(--fa-font-solid);
-  content: "\f004";
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  top: 2px;
-  color: #ff79da;
-  z-index: 1;
-  transform: scale(0);
 }
 
 .restaurantBanner {

@@ -6,8 +6,37 @@
   background: $colour-linearGradientBtn;
   color: white;
   font-weight: 600;
+  cursor: pointer;
   &:hover {
     @include box-shadow-hover;
     opacity: 0.8;
+  }
+}
+
+.iconHeart {
+  font-size: 1.5em;
+  color: grey;
+  position: relative;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  &::before {
+    font: var(--fa-font-regular);
+    content: "\f004";
+  }
+  &:hover {
+    &::after {
+      transform: scale(1);
+      transform-origin: center;
+      transition: transform 400ms ease-in;
+    }
+  }
+  &::after {
+    font: var(--fa-font-solid);
+    content: "\f004";
+    @include pseudo-elem;
+    top: 2px;
+    color: $colour-secondary;
+    z-index: 1;
+    transform: scale(0);
   }
 }

@@ -84,30 +84,3 @@
   padding: 10px 10px;
   align-items: center;
 }
-
-.iconHeart {
-  font-size: 1.5em;
-  color: grey;
-  position: relative;
-  text-rendering: auto;
-  -webkit-font-smoothing: antialiased;
-  &::before {
-    font: var(--fa-font-regular);
-    content: "\f004";
-  }
-  &:hover {
-    &::after {
-      transform: scale(1);
-      transition: transform 400ms ease-in;
-    }
-  }
-  &::after {
-    font: var(--fa-font-solid);
-    content: "\f004";
-    @include pseudo-elem;
-    top: 2px;
-    color: $colour-secondary;
-    z-index: 1;
-    transform: scale(0);
-  }
-}
